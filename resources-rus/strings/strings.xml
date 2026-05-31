@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="AppName">Clicker counter</string>
+    <string id="ResetHint">удерж. = сброс</string>
+    <string id="ResetPrompt">Сбросить на 0?</string>
+</strings>
