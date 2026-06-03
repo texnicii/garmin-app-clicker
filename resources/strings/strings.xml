@@ -2,5 +2,6 @@
 <strings>
     <string id="AppName">Clicker counter</string>
     <string id="ResetHint">hold = reset</string>
+    <string id="ResetHintTouch">hold screen = reset</string>
     <string id="ResetPrompt">Reset to 0?</string>
 </strings>

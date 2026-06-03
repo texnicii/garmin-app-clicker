@@ -2,5 +2,6 @@
 <strings>
     <string id="AppName">Clicker counter</string>
     <string id="ResetHint">удерж. = сброс</string>
+    <string id="ResetHintTouch">удерж. экран = сброс</string>
     <string id="ResetPrompt">Сбросить на 0?</string>
 </strings>

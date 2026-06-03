@@ -5,3 +5,6 @@ bin/
 *.debug.xml
 developer_key
 developer_key.pem
+
+# local plan
+PLAN.md
