@@ -56,19 +56,28 @@ class ClickerView extends WatchUi.View {
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
         );
 
+        // On touch watches without a left button the reset is a screen
+        // long-press, so we swap the hint and drop the left-pointing arrow.
+        var touchReset = Capabilities.usesTouchReset();
+        var hint = touchReset ? Rez.Strings.ResetHintTouch : Rez.Strings.ResetHint;
+
         // Hint for the reset gesture.
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             w / 2,
             h - (h / 8),
             Graphics.FONT_XTINY,
-            WatchUi.loadResource(Rez.Strings.ResetHint) as String,
+            WatchUi.loadResource(hint) as String,
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
         );
 
-        // Tiny markers pointing at the physical buttons.
+        // "+1" marker always points at the main START/SELECT button.
         drawPlusMarker(dc, w, h);
-        drawResetMarker(dc, w, h);
+
+        // The left "0" arrow only makes sense when reset is a physical button.
+        if (!touchReset) {
+            drawResetMarker(dc, w, h);
+        }
     }
 
     // "+1 >" near the right edge at ~2 o'clock — points at START/SELECT.
